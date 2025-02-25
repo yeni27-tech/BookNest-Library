@@ -15,12 +15,16 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('nama_lengkap'); // Nama lengkap
+            $table->string('email')->unique(); // Email (opsional untuk login)
+            $table->string('password'); // Password untuk login (jika diperlukan)
+            $table->string('phone')->unique(); // Nomor HP
+            $table->text('address'); // Alamat
+            $table->enum('user_type', ['umum', 'pelajar']); // Kategori pengguna
+            $table->string('identity_number')->unique(); // NIK/NISN
+            $table->string('institution')->nullable(); // Sekolah/universitas (hanya untuk pelajar)
+            $table->string('library_card_number')->unique(); // Nomor kartu perpustakaan
+            $table->timestamps(); // created_at & updated_at
         });
     }
 
