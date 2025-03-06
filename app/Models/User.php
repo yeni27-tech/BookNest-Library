@@ -26,11 +26,10 @@ class User extends Authenticatable
         'user_type',
         'identity_number',
         'institution',
-        'library_card_number',
 
     ];
 
-    
+
 
     /**
      * The attributes that should be hidden for serialization.
