@@ -14,6 +14,18 @@ class insertUser extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('users')->insert([
+            [
+                'nama_lengkap' => 'Admin',
+                'email' => '',
+                'password' => Hash::make(''),
+                'phone' => '',
+                'address' => '',
+                'user_type' => '',
+                'identity_number' => '',
+                'institution' => '',
+                'library_card_number' => '',
+            ],
+        ]);
     }
 }
