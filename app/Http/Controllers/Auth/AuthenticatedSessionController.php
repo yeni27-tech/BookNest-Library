@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
             return redirect()->route('adminDashboard'); // Pastikan route ini ada di web.php
         }
 
-        return redirect()->route('dashboard'); // Untuk user biasa
+        return redirect()->route ('user.dashboard');
     }
 
     /**
