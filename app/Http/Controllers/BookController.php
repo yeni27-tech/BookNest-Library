@@ -14,7 +14,7 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::all();
-        return view('books.index', compact('books'));
+        return view('admin.books.index', compact('books'));
     }
 
     /**
@@ -22,7 +22,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('books.create');
+        return view('admin.books.create');
     }
 
     /**
@@ -43,7 +43,7 @@ class BookController extends Controller
 
         Book::create($request->all());
 
-        return redirect()->route('books.index')
+        return redirect()->route('admin.books.index')
             ->with('success', 'Buku berhasil ditambahkan.');
     }
 
@@ -53,7 +53,7 @@ class BookController extends Controller
     public function edit($id)
     {
         $book = Book::findOrFail($id);
-        return view('books.edit', compact('book'));
+        return view('admin.books.edit', compact('book'));
     }
 
     /**
@@ -75,7 +75,7 @@ class BookController extends Controller
         $book = Book::findOrFail($id);
         $book->update($request->all());
 
-        return redirect()->route('books.index')->with('success', 'Buku berhasil diperbarui.');
+        return redirect()->route('admin.books.index')->with('success', 'Buku berhasil diperbarui.');
     }
 
     /**
@@ -86,7 +86,7 @@ class BookController extends Controller
         $book = Book::findOrFail($id);
         $book->delete();
 
-        return redirect()->route('books.index')->with('success', 'Buku berhasil dihapus.');
+        return redirect()->route('admin.books.index')->with('success', 'Buku berhasil dihapus.');
     }
 
     /**
@@ -95,6 +95,6 @@ class BookController extends Controller
     public function show($id)
     {
         $book = Book::findOrFail($id);
-        return view('books.show', compact('book'));
+        return view('admin.books.show', compact('book'));
     }
 }

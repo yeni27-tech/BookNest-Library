@@ -1,20 +1,3 @@
-{{-- <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout> --}}
 
   @extends('layouts.landingApp')
 
@@ -37,12 +20,12 @@
                   <p><strong>Alamat:</strong> {{ Auth::user()->address ?? 'Belum diatur' }}</p>
                   <p><strong>Instansi:</strong> {{ Auth::user()->institution ?? 'Belum diatur' }}</p>
                   <p><strong>Nomor Identitas:</strong> {{ Auth::user()->identity_number ?? 'Belum diatur' }}</p>
-                  @if($libraryCard)
+                  {{-- @if($libraryCard)
                       <p><strong>Kartu Perpustakaan:</strong> {{ $libraryCard->barcode }} (Diterbitkan: {{ $libraryCard->issued_date->format('d M Y') }})</p>
                       <p><strong>Status Kartu:</strong> {{ $libraryCard->status ? 'Aktif' : 'Non-Aktif' }}</p>
                   @else
                       <p><strong>Kartu Perpustakaan:</strong> Belum terdaftar</p>
-                  @endif
+                  @endif --}}
                   <a href="{{ route('logout') }}" class="btn" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf
@@ -51,7 +34,7 @@
           </div>
       </section>
 
-      <section class="section section-dark">
+      {{-- <section class="section section-dark">
           <h2 class="section-title">Buku Favorit</h2>
           @if($favorites->isEmpty())
               <p class="text-center">Belum ada buku favorit. Jelajahi <a href="{{ route('collections') }}">Koleksi</a> untuk menambahkan!</p>
@@ -76,8 +59,8 @@
                   @endforeach
               </div>
           @endif
-      </section>
-
+      </section> --}}
+{{--
       <section class="section section-light">
           <h2 class="section-title">Peminjaman Aktif</h2>
           @if($loans->isEmpty())
@@ -101,8 +84,8 @@
                   @endforeach
               </div>
           @endif
-      </section>
-
+      </section> --}}
+{{--
       <section class="section section-dark">
           <h2 class="section-title">Review Saya</h2>
           @if($reviews->isEmpty())
@@ -124,6 +107,6 @@
                   @endforeach
               </div>
           @endif
-      </section>
+      </section> --}}
   @endsection
 
